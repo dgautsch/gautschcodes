@@ -1,0 +1,12 @@
+.archive-post {
+    font-family: $serif;
+    @include font-size(1);
+    text-align: center;
+    margin: 1em 0;
+}
+.archive-title {
+    a {
+        color: $primary-orange;
+
+    }
+}

@@ -1,0 +1,54 @@
+.article-title {
+    text-align: center;
+    @include font-size(2.4);
+    @include breakpoint($small) {
+        @include font-size(2);
+    }
+}
+.article-top-meta {
+    @include font-size(1.2);
+    text-align: center;
+    margin: 0 30% 2em;
+    border-bottom: 1px dotted $black;
+    padding: 0 0 1em 0;
+}
+.article-content {
+    font-family: $serif;
+    @include font-size(1.2);
+    @include breakpoint($small) {
+        @include font-size(1);
+    }
+    a {
+        color: $primary-orange;
+        font-weight: bold;
+    }
+}
+.entry-date {
+    @extend .archive-post;
+    @include font-size(1.1);
+}
+.headerlink { // add hover functionality
+    &:hover {
+        content: '#'
+    }
+}
+.post-categories,
+.post-tags {
+    a:first-of-type {
+        padding-left: 1em;
+    }
+    a {
+        color: $primary-blue;
+        padding-right: 1em;
+        text-transform: uppercase;
+        @include font-size(0.8);
+        &:after {
+            content: ','
+        }
+    }
+    a:last-of-type {
+        &:after {
+            content: ''
+        }
+    }
+}

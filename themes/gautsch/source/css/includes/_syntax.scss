@@ -1,0 +1,103 @@
+/*
+
+Zenburn style from voldmar.ru (c) Vladimir Epifanov <voldmar@voldmar.ru>
+based on dark.css by Ivan Sagalaev
+
+*/
+
+figure.highlight {
+    display: block;
+    overflow-x: auto;
+    margin: 1em 0;
+    padding: 0.5em;
+    background: #3f3f3f;
+    color: #dcdcdc;
+
+    @include breakpoint($small) {
+        @include font-size(0.8);
+    };
+
+    .code {
+        vertical-align: text-top;
+    }
+
+    .gutter  {
+        padding: 0 15px 0 10px;
+        pre {
+            border-right: 2px solid #666;
+            padding-right: 10px;
+            margin-right: 10px;
+        }
+        .line {
+            color: #8cd0d3;
+        }
+    }
+
+    .keyword,
+    .selector-tag,
+    .tag {
+      color: #e3ceab;
+    }
+
+    .template-tag {
+      color: #dcdcdc;
+    }
+
+    .line {
+      color: #FFF;
+    }
+
+    .params,
+    .variable,
+    .template-variable,
+    .attribute {
+      color: #efdcbc;
+    }
+
+    .literal {
+      color: #efefaf;
+    }
+
+    .subst {
+      color: #8f8f8f;
+    }
+
+    .title,
+    .name,
+    .selector-id,
+    .selector-class,
+    .section,
+    .type {
+      color: #efef8f;
+    }
+
+    .symbol,
+    .bullet,
+    .link {
+      color: #dca3a3;
+    }
+
+    .deletion,
+    .string,
+    .built_in,
+    .builtin-name {
+      color: #cc9393;
+    }
+
+    .addition,
+    .comment,
+    .quote,
+    .meta {
+      color: #7f9f7f;
+    }
+
+
+    .emphasis {
+      font-style: italic;
+    }
+
+    .strong {
+      font-weight: bold;
+    }
+
+}

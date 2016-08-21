@@ -1,0 +1,27 @@
+/** Common Styles **/
+
+.wrapper {
+	max-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0.625em;
+}
+
+.wrapper {
+	min-height: 100%;
+	/* equal to footer height */
+	margin-bottom: -142px;
+}
+
+.wrapper:after {
+	content: "";
+	display: block;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+	max-width: $xxlarge;
+	margin: 0 auto;
+	padding: 2em;
+}

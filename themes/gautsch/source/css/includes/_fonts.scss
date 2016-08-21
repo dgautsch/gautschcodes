@@ -1,0 +1,154 @@
+/**
+ * Typography-related styles.
+ * If it's a font, font-size, or color, it's in here.
+ */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.25),
+only screen and ( min-device-pixel-ratio: 1.25),
+only screen and ( min-resolution: 200dpi),
+only screen and ( min-resolution: 1.25dppx) {
+	html {
+		-webkit-font-smoothing: subpixel-antialiased;
+	}
+}
+
+
+/*----------------------
+ * Global element styles
+ *---------------------*/
+
+html,
+body {
+	color: $bodytext;
+	font-family: $sans-serif;
+	font-size: 16px;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	margin: 0.67em 0;
+}
+
+abbr,
+abbr[title] {
+	border: 0;
+	font-style: normal;
+}
+
+label {
+	color: $black;
+}
+
+img {
+	border: 0;
+}
+
+
+/*----------------------
+ * Links
+ *---------------------*/
+
+a {
+	color: $link;
+	text-decoration: none;
+}
+
+a:hover,
+a:active,
+a:focus {
+	background: transparent; // Remove the gray background color from active links in IE 10.
+	text-decoration: underline;
+	color: $primary-orange;
+}
+
+
+/* Typography
+---------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	font-family: $sans-serif;
+	font-weight: bold;
+	margin: 0;
+	color: $black;
+}
+
+h1 {
+	@include font-size(2.4);
+}
+
+h2 {
+	@include font-size(1.7);
+}
+
+h3 {
+	@include font-size(1.4);
+}
+
+p,
+blockquote,
+footer,
+div,
+section,
+article,
+ul {
+	line-height: 1.6;
+	color: $bodytext;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+sup {
+	top: 0;
+	font-size: 0.5em;
+	line-height: 1;
+	vertical-align: top;
+}
+
+h3 sup {
+	line-height: 1.6;
+}
+
+p sup {
+	line-height: 2;
+}
+
+li a,
+p a,
+blockquote a {
+	font-weight: normal;
+}
+
+.site-title {
+	@include font-size(1.2);
+	display: inline;
+	font-weight: bold;
+	.last-name {
+		font-weight: normal;
+	}
+}
+
+.site-subtitle {
+	@include font-size(3);
+	margin: 0;
+	font-weight: normal;
+	@include breakpoint($small) {
+		@include font-size(2.8);
+		line-height: 1.2;
+	}
+}
+
+.page-heading {
+	@extend .site-subtitle;
+	text-align: center;
+	text-transform: capitalize;
+}

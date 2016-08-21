@@ -1,0 +1,84 @@
+<article>
+
+  <% if (item.link){ %>
+    <% if (item.title){ %>
+    <h3 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h3>
+    <% } else { %>
+    <h3 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h3>
+    <% } %>
+  <% } else { %>
+    <% if (index){ %>
+    <h3 class="article-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h3>
+    <% } else { %>
+    <h3 class="article-title"><span><%= item.title %></span></h3>
+    <% } %>
+  <% } %>
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="<%- config.root %><%- item.path %>" rel="bookmark">
+        <time class="entry-date published" datetime="<%= item.date.toDate().toISOString() %>">
+          <%= item.date.format(config.date_format) %>
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  <% if (item.photos && item.photos.length){ %>
+  <div class="featured-media">
+    <% if (item.photos.length && !index){ %>
+      <% for (var i in item.photos) { %>
+      <img src="<%- item.photos[i] %>" class="attachment-post-thumbnail size-post-thumbnail">
+      <% } %>
+    <% } else if (item.photos.length && index){ %>
+    <img src="<%- item.photos[0] %>" class="attachment-post-thumbnail size-post-thumbnail">
+    <% } else { %>
+    <img src="<%- item.photos %>" class="attachment-post-thumbnail size-post-thumbnail">
+    <% } %>
+  </div>
+  <% } %>
+
+  <div class="article-content">
+      <% if (item.excerpt && index){ %>
+        <%- item.excerpt %>
+      <% } else { %>
+        <%- item.content %>
+      <% } %>
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta">
+
+    <% if (item.categories && item.categories.length){ %>
+      <%
+        var cats = [];
+        item.categories.forEach(function(cat){
+            cats.push('<a href="' + config.root + cat.path + '">' + cat.name + '</a>');
+        });
+      %>
+
+    <span class="post-categories">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <%- cats.join(', ') %>
+    </span>
+    <% } %>
+
+    <% if (item.tags && item.tags.length){ %>
+    <%
+        var tags = [];
+        item.tags.forEach(function(tag){
+            tags.push('<a href="' + config.root + tag.path + '">' + tag.name + '</a>');
+        });
+    %>
+
+    <span class="post-tags">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+        <%- tags.join('') %>
+    </span>
+    <% } %>
+
+    </div>
+
+  </div>
+</article>

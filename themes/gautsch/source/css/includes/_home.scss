@@ -1,0 +1,62 @@
+.site-subtitle {
+    a {
+        text-decoration: none;
+    }
+    &:hover {
+        strong {
+            color: $primary-orange;
+        }
+    }
+}
+.social {
+    margin: 3em 0;
+}
+.social-links {
+    margin: 2em 0;
+    padding: 0;
+    li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 1em;
+        line-height: 2;
+    }
+}
+.social-link {
+    position: relative;
+    text-align: left;
+
+    .social-default {
+        position: relative;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        opacity: 1;
+        @include transition();
+    }
+
+    .social-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        opacity: 0;
+        @include transition();
+    }
+
+    &:hover {
+
+        text-decoration: none;
+
+        .social-default {
+            opacity: 0;
+            @include transition();
+        }
+
+        .social-hover {
+            top: -5px;
+            left: 18px;
+            opacity: 1;
+            @include transition();
+        }
+    }
+}

@@ -1,0 +1,95 @@
+@mixin rounded($radius) {
+	border-radius: $radius;
+}
+@mixin gradient($from, $to) {
+	background: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background: -moz-linear-gradient(top, $from, $to);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$from}', endColorstr='#{$to}');
+}
+// Add to input fields
+@mixin placeholder($color) {
+	&:focus::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:focus::-moz-placeholder {
+		color: $color;
+	}
+	&:focus:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin transition($time: 0.3s) {
+  -webkit-transition: all $time;
+  -moz-transition: all $time;
+  transition: all $time;
+}
+
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+@mixin transition-max-height {
+	@include transition(max-height 0.7s cubic-bezier(0.7, 0, 0.3, 1));
+}
+
+// Font sizing mixin usage: @include font-size(1.2);
+@mixin font-size($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin webkit-overflow-fix {
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+}
+
+@mixin circle($width, $color) {
+  width: $width;
+  height: $width;
+  background: $color;
+  -webkit-border-radius: $width/2;
+     -moz-border-radius: $width/2;
+          border-radius: $width/2;
+}
+
+// Breakpoint Mixin
+@mixin breakpoint($point) {
+	@if $point == "xx-large" {
+		@media (min-width: $xxlarge) {
+			@content;
+		}
+	}
+	@else if $point == "x-large" {
+		@media (min-width: $xlarge) {
+			@content;
+		}
+	}
+	@else if $point == "large" {
+		@media (min-width: $large) {
+			@content;
+		}
+	}
+	@else if $point == "medium" {
+		@media (min-width: $medium) {
+			@content;
+		}
+	}
+	@else if $point == "small" {
+		@media (max-width: $small) {
+			@content;
+		}
+	}
+	@else {
+		@media (min-width: $point) {
+			@content;
+		}
+	}
+}

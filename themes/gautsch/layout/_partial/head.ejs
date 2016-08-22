@@ -10,5 +10,6 @@
   var title = page.title;
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
+  <%- js('js/fontloader.js') %>
   <%- css('css/main') %>
 </head>

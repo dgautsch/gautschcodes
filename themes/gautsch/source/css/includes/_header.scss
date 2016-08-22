@@ -1,4 +1,18 @@
-.btn-night-mode {
-    background: none;
-    border: none;
+.menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    li {
+        list-style: none;
+        display: inline-block;
+        padding-right: 1em;
+    }
+    li:only-child {
+        padding: 0;
+    }
+}
+
+.menu-item {
+    @include  font-size(1);
+    color: $black;
 }

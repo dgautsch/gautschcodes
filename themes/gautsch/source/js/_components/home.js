@@ -9,10 +9,12 @@ var home = (function () {
 
     function toggleNightMode() {
         if (body.classList.contains('sunset')) {
+            nightModeBtn.dataset.action = 'night';
             body.classList.remove('sunset');
             Cookies.set('nightMode', false);
         } else {
             body.classList.add('sunset');
+            nightModeBtn.dataset.action = 'day';
             Cookies.set('nightMode', true);
         }
     }
@@ -25,6 +27,7 @@ var home = (function () {
         }
 
         if (nightModeState === 'true') {
+            nightModeBtn.dataset.action = 'day';
             body.classList.add('notransition', 'sunset');
             body.classList.remove('notransition');
         }

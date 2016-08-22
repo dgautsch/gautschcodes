@@ -23,5 +23,8 @@
 	width: 100%;
 	max-width: $xxlarge;
 	margin: 0 auto;
-	padding: 2em;
+	padding: 1em;
+	@include breakpoint($medium) {
+		padding: 2em;
+	}
 }

@@ -18,36 +18,8 @@ html {
 
 body {
 	background: $page-background;
-    @include transition(1s);
-    h1,h2,h3,p,a,footer, div, section, article, ul, blockquote {
-        @include transition(1s);
-    }
 }
 
-/* Night Mode Styles */
-body.sunset {
-    background: $page-background--sunset;
-    @include transition(1s);
-    h1,h2,h3,p,a,footer, div, section, article, ul, blockquote {
-        color: $offwhite;
-        @include transition(1s);
-    }
-    .fa {
-        color: $offwhite;
-        @include transition(1s);
-    }
-    .post-categories a, .post-tags a {
-        color: $offwhite;
-        @include transition(1s);
-    }
-    .article-content a {
-        color: $primary-orange;
-    }
-    .article-top-meta {
-        border-bottom-color: $white;
-        @include transition(1s);
-    }
-}
 .skip-main {
     color: white;
 	font-family: $sans-serif;
@@ -78,26 +50,6 @@ body.sunset {
 	}
 }
 
-header.container {
-    padding: 1em 2em 0;
-}
-
 .copyright {
     @include font-size(0.8);
-}
-
-.menu {
-    float: right;
-    margin: 0;
-    padding: 0;
-    li {
-        list-style: none;
-        display: inline-block;
-        padding-right: 1em;
-    }
-}
-
-.menu-item {
-    @include  font-size(1);
-    color: $black;
 }

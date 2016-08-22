@@ -2,4 +2,17 @@
 menu:
   Home: /
   Archives: /archives
-rss: /atom.xml
+
+social:
+    github:
+    lastfm:
+    linkedin:
+    instagram:
+    twitter:
+
+
+
+title: Gautsch Codes
+tagline:
+    main: Passionate for technology, simplicity,
+    highlight: and great code.

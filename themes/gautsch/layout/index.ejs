@@ -1,4 +1,4 @@
-<h3 class="site-subtitle">Passionate for technology, simplicity, <a href="/archives"><strong> and great code.</strong></a></h3>
+<% if (config.tagline.main) {%><h3 class="site-subtitle"><%- config.tagline.main %><a href="/archives"><strong><%- config.tagline.highlight %></strong></a></h3>}%>
 <div class="social">
     <ul class="social-links">
         <li>
@@ -18,6 +18,6 @@
         </li>
     </ul>
     <p>
-        <strong>let's talk:</strong> <a href="mailto:dan@gautsch.codes">dan(at)gautsch.codes</a>
+        <strong>let's talk |</strong> dan(at)gautsch.codes
     </p>
 </div>

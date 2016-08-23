@@ -14,7 +14,7 @@ If you're not using a JavaScript linter, you should be. There are a lot of great
 - Quickly spot common problems with JavaScript
 - Less time debugging
 
-Most modern code editors support linting in some form or another. For the purposes of this article I'll show you how to quickly get setup in Sublime Text 3.
+Most modern code editors support linting in some form or another. For the purposes of this article I'll show you how to quickly get setup in Sublime Text 3 using JSHint. The steps for ESLint are relatively the same.
 
 1. First make sure you have the [Sublime Text package manager](https://packagecontrol.io/) installed.
 2. Then make sure you have [Node installed.](http://node.io/)
@@ -31,17 +31,19 @@ If you have another linter you prefer such as `eslint` feel free to install the 
 
 You can place this snippet in the root of your project and name it `.jshintrc` to apply your own custom rules. Or you can modify your global jshint configuration in sublime text.
 
-{
+``` json
+    {
 
-    "undef": true,
-	"unused": true,
-	"browser": true,
-	"predef": [
-		"module",
-		"console",
-		"require"
-	]
-}
+        "undef": true,
+    	"unused": true,
+    	"browser": true,
+    	"predef": [
+    		"module",
+    		"console",
+    		"require"
+    	]
+    }
+```
 
 ### Resource Links
 

@@ -16,7 +16,7 @@ JavaScript traditionally has no module system (this is changing with ES2015) for
 
 Before I go any further, let me talk about the module pattern and why it can help us write maintainable code in our JavaScript applications.
 
-### What is the module pattern?
+## What is the module pattern?
 
 The traditional module pattern looks like this:
 
@@ -42,11 +42,11 @@ This pattern allows us to contain our module into logical pieces of functionalit
 
 Additionally, the module is wrapped in an Immediately Invoked Function Expression (IIFE) which prevents the global scope from being polluted. [Todd Motto has written a good article explaining the benefits of the pattern](https://toddmotto.com/mastering-the-module-pattern/).
 
-### How does this work with Browserify?
+## How does this work with Browserify?
 
 Traditionally, we would have many different modules written in this fashion and we would then concatenate all of our JavaScript into one big file. This keeps our code modularized and also prevents global collisions. Honestly, we're still doing this, but Browserify makes dependency management more streamlined because we don't have to worry about including dependencies in the right order via &lt;script&gt; tags in our HTML or in the way our JavaScript is concatenated. Using the module pattern above, we would include a line at the bottom of the file that looks like this:
 
-#### Modules
+### Modules
 
 ``` javascript
 module.exports = exampleModule;
@@ -64,7 +64,7 @@ exampleModule.concat('can be big strings.') // outputs A string can be big strin
 
 ```
 
-#### Application Folder Structure
+### Application Folder Structure
 
 The piece that brings everything together is what's called an endpoint in browserify. The endpoint is the script that browserify compiles and combines all the references into a large bundled file. 
 
@@ -78,8 +78,11 @@ Consider this folder structure:
     -- views/
     ---- index.js
     -- app.js
+
 ```
+
 Inside of our endpoint called app.js we would have the following:
+
 
  ``` javascript
 
@@ -89,11 +92,11 @@ require('./controllers');
 require('./views');
 ```
 
-##### What is all of that doing?
+### What is all of that doing?
 
 Previously, I had to use a relative path to specify the JavaScript file I wanted to include. You may have noticed that i don't reference the index.js file but only the folder. Browserify allows me to reference folders and by default it will search for the index.js file first and then look for a file with the same name. This allows you to chain references without cluttering up your endpoint file. 
 
-##### How is this all built?
+### How is this all built?
 
 There are lots of options to then bundle your Browserify files. I prefer to use gulp, but you can also do it with the command line.
 
@@ -117,11 +120,11 @@ global.jQuery = $ = require('jquery');
 
 This isn't a relative path because Browserify knows to look in the package.json for dependencies. So, if it doesn't find a an index.js or the name of the file you've specified it'll search the node_modules for the appropriate file. The global object tells Browserify that you'd like to include jQuery in ALL of your files which then releases you from writing var $ = require('jquery'); in all of your files.
 
-### Conclusion
+## Conclusion
 
 Feel free to tweet me [@iamdaninphilly](http://twitter.com/iamdaninphilly) about anything I may have gotten wrong, I'm always open for discussion!
 
-#### What's the benefit in all of this?
+### What's the benefit in all of this?
 
 - A simplified application folder structure.
 - Built in dependency management.

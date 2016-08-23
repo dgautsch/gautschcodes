@@ -81,3 +81,13 @@ bourbon:
   outFile: bundle
   sourceMapEmbed: false
   sourceMapContents: false
+
+deploy:
+  type: rsync
+  host: gautsch.codes
+  user: gautschcodes
+  root: gautsch.codes
+  port: [port]
+  delete: false
+  verbose: true
+  ignore_errors: false

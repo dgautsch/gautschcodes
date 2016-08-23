@@ -5,8 +5,8 @@
     margin: 1em 0;
 }
 .archive-title {
-    a {
-        color: $primary-orange;
+    a:hover {
+        text-decoration: none;
 
     }
 }

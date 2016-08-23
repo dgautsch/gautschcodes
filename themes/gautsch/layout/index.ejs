@@ -1,4 +1,5 @@
-<% if (config.tagline.main) {%><h3 class="site-subtitle"><%- config.tagline.main %><a href="/archives"><strong><%- config.tagline.highlight %></strong></a></h3>}%>
+<% if (theme.tagline) {%><h3 class="site-subtitle"><%- theme.tagline.main %> <a href="<%- url_for('archives') %>"><strong><%- theme.tagline.highlight %></strong></a></h3><% } %>
+
 <div class="social">
     <ul class="social-links">
         <li>

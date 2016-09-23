@@ -9,9 +9,16 @@ figure.highlight {
     display: block;
     overflow-x: auto;
     margin: 1em 0;
-    padding: 0.5em;
     background: #3f3f3f;
     color: #dcdcdc;
+
+    figcaption {
+      @include font-size(1);
+      font-family: $sans-serif;
+      color: #000;
+      background: #EFEFEF;
+      padding: 5px;
+    }
 
     @include breakpoint($small) {
         @include font-size(0.8);

@@ -69,11 +69,11 @@ theme: gautsch
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: rsync
-  host: holly.dreamhost.com
+  host: gautsch.codes
   user: gautschcodes
   root: gautsch.codes
-  port: 21
-  delete: true
+  port: 22
+  delete: false
   verbose: true
   ignore_errors: false
 

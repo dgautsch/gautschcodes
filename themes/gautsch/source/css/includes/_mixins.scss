@@ -25,11 +25,6 @@
   transition: all $time;
 }
 
-@mixin vertical-align {
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-}
 @mixin transition-max-height {
 	@include transition(max-height 0.7s cubic-bezier(0.7, 0, 0.3, 1));
 }

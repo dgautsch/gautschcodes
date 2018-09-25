@@ -1,12 +1,15 @@
 .archive-post {
+    display: flex;
+    align-items: center;
     font-family: $serif;
     @include font-size(1);
     text-align: center;
     margin: 1em 0;
 }
 .archive-title {
+    @extend .h3;
+    margin-left: 2em;
     a:hover {
         text-decoration: none;
-
     }
 }

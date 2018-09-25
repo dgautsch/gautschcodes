@@ -105,11 +105,17 @@ h3,
 	@include font-size(1.4);
 }
 
+h4,
+.h4 {
+	@include font-size(1.2);
+}
+
 p,
 blockquote,
 footer,
 div,
 section,
+time,
 article,
 ul {
 	line-height: 1.6;
@@ -166,7 +172,6 @@ blockquote a {
 
 .page-heading {
 	@extend .site-subtitle;
-	text-align: center;
 	text-transform: capitalize;
 }
 

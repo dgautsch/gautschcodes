@@ -1,7 +1,7 @@
 body {
 	background: $page-background;
     @include transition(1s);
-    h1,h2,h3, footer, div, section, article, ul, blockquote {
+    h1,h2,h3, footer, div, section, article, ul, time, blockquote {
         @include transition(1s);
     }
 }

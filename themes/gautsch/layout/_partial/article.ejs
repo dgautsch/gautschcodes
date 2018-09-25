@@ -2,15 +2,15 @@
   <div class="article-top-meta">
     <% if (item.link){ %>
       <% if (item.title){ %>
-      <h1 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h1>
+      <h1 class="article-title"><a href="<%- item.link %>" target="_blank"><%= item.title %></a></h1>
       <% } else { %>
-      <h2 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h2>
+      <h2 class="article-title"><a href="<%- item.link %>" target="_blank"><%= item.link %></a></h2>
       <% } %>
     <% } else { %>
       <% if (index){ %>
-      <h2 class="article-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h2>
+      <h2 class="article-title"><a href="<%- config.root %><%- item.path %>"><%= item.title %></a></h2>
       <% } else { %>
-      <h1 class="article-title"><span><%= item.title %></span></h1>
+      <h1 class="article-title"><%= item.title %></h1>
       <% } %>
     <% } %>
     <span class="posted-on">
@@ -20,6 +20,20 @@
         </time>
       </a>
     </span>
+    <% if (item.tags && item.tags.length){ %>
+    <%
+        var tags = [];
+        item.tags.forEach(function(tag){
+            tags.push('<a href="' + config.root + tag.path + '">' + tag.name + '</a>');
+        });
+    %>
+
+    <span class="post-tags">
+      <i class="fa fa-tags" aria-hidden="true"></i>
+        <%- tags.join('') %>
+    </span>
+    <% } %>
+
   </div>
 
 

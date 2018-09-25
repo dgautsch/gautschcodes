@@ -1,7 +1,7 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
+  home: /
+  archives: /archives
 
 keywords:
     - Developer
@@ -13,10 +13,17 @@ keywords:
 
 social:
     github:
-    lastfm:
+        name: dgautsch
+        link: https://github.com/dgautsch
     linkedin:
+        name: dangautsch
+        link: https://www.linkedin.com/in/dangautsch/
     instagram:
+        name: dgooches
+        link: https://www.instagram.com/dgooches/
     twitter:
+        name: gautschcodes
+        link: https://twitter.com/gautschcodes
 
 
 

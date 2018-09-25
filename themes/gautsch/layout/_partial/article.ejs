@@ -1,22 +1,20 @@
 <article>
-
-  <% if (item.link){ %>
-    <% if (item.title){ %>
-    <h2 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h2>
-    <% } else { %>
-    <h2 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h2>
-    <% } %>
-  <% } else { %>
-    <% if (index){ %>
-    <h2 class="article-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h2>
-    <% } else { %>
-    <h2 class="article-title"><span><%= item.title %></span></h2>
-    <% } %>
-  <% } %>
-
   <div class="article-top-meta">
+    <% if (item.link){ %>
+      <% if (item.title){ %>
+      <h1 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.title %></span></a></h1>
+      <% } else { %>
+      <h2 class="article-title"><a href="<%- item.link %>" target="_blank"><span><%= item.link %></span></a></h2>
+      <% } %>
+    <% } else { %>
+      <% if (index){ %>
+      <h2 class="article-title"><a href="<%- config.root %><%- item.path %>"><span><%= item.title %></span></a></h2>
+      <% } else { %>
+      <h1 class="article-title"><span><%= item.title %></span></h1>
+      <% } %>
+    <% } %>
     <span class="posted-on">
-      <a href="<%- config.root %><%- item.path %>" rel="bookmark">
+      <a href="<%- url_for(item.path) %>" rel="bookmark">
         <time class="entry-date published" datetime="<%= item.date.toDate().toISOString() %>">
           <%= item.date.format(config.date_format) %>
         </time>
@@ -80,7 +78,7 @@
     <span class="post-tweet"><a class="twitter-share-button"
       href="https://twitter.com/share"
       data-url="<%- page.link %>"
-      data-via="iamdaninphilly"
+      data-via="<%- theme.social.twitter.name %>"
       data-text="<%- page.title %>"
       >Tweet</a></span>
     </div>

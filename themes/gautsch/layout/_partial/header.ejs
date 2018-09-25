@@ -1,9 +1,17 @@
 <a href="#main" class="skip-main">Skip to Main Content</a>
 <header id="header" class="container">
-    <a href="/"><h1 class="site-title">Dan <span class="last-name">Gautsch</span></h1></a>
-    <ul class="menu">
+    <a href="/">
     <% if (is_home()) {%>
-        <li><a href="/archives" class="menu-item"><i class="fa fa-cloud" aria-hidden="true"></i><span class="accessibly-hidden">thoughts</span></a></li>
+        <h1 class="site-title">Dan <span class="last-name">Gautsch</span></h1>
+    <%} else {%>
+        <p class="site-title">Dan <span class="last-name">Gautsch</span></p>
+    <%} %>
+    </a>
+    <ul class="menu">
+    <% if (!page.archive) {%>
+        <li>
+            <a href="<%- url_for(theme.menu.archives) %>">Posts</a>
+        </li>
     <%} %>
         <li>
             <button type="button" class="btn-night-mode" data-action="night">

@@ -77,14 +77,10 @@ deploy:
   verbose: true
   ignore_errors: false
 
-bourbon:
-  outputStyle: nested
-  precision: 8
-  imagePath: images
-  sourceComments: none
-  indentedSyntax: false
-  omitSourceMapUrl: false
+node_sass:
+  outputStyle: compressed
+  precision: 5
+  sourceComments: true
   sourceMap: true
   outFile: bundle
-  sourceMapEmbed: false
-  sourceMapContents: false
+  sourceMapEmbed: true
